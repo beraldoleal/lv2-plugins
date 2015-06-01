@@ -60,7 +60,7 @@ static void run(LV2_Handle instance, uint32_t n_samples)
             plugin_data->phase += phase_increment;
 
             if (plugin_data->phase > 1.0)
-                plugin_data->phase = 0.0;
+                plugin_data->phase -= 1.0;
         }
 }
 
