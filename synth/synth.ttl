@@ -1,0 +1,31 @@
+@prefix doap:  <http://usefulinc.com/ns/doap#>.
+@prefix lv2:   <http://lv2plug.in/ns/lv2core#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+<http://github.com/beraldoleal/lv2-synth> a lv2:Plugin, lv2:OscillatorPlugin;
+
+doap:name "Simple pure sine synth plugin";
+
+doap:license <GPL>;
+
+doap:developer [
+    foaf:name "Beraldo Leal";
+    foaf:homepage <http://ime.usp.br/~beraldo/>;
+    foaf:mbox <mailto:beraldo@ime.usp.br>;
+    ];
+
+lv2:port [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 0;
+    lv2:symbol "frequency";
+    lv2:name "Frequency";
+    lv2:default 440.0;
+    lv2:minimum 40.0;
+    lv2:maximum 880.0;
+],
+[
+    a lv2:OutputPort, lv2:AudioPort;
+    lv2:index 1;
+    lv2:symbol "out";
+    lv2:name "Out";
+]
